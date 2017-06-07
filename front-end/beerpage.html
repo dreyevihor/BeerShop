@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{beer.title}}</title>
+	<title>{{args.title}}</title>
 </head>
 <body>
 <ul>
-	<li>title :{{beer.title}}</li>
-	<li>description: {{beer.description}}</li>
-	<li>price: {{beer.price}}</li>
-	<li>alcohol: {{beer.alcohol}}</li>
-	<li>likes: {{beer.likes}}</li>
-	<li>dislikes: {{beer.dislikes}}</li>
+	<li>title :{{ args.title}}</li>
+	<li>description: {{ args.description}}</li>
+	<li>price: {{ args.price}}</li>
+	<li>alcohol: {{args.alcohol}}</li>
+	<li>likes: {{args.likes}}</li>
+	<li>dislikes: {{args.dislikes}}</li>
 </ul>
-
+<form action="comment" method="POST">
+	
+	{{ args.form }}
+	<input type="Submit" class= "button">
+</form>
+<form action="buy" method="POST">
+<input type="number" name="count" min = "1" step = "1">
+<input type="Submit" class = "button">	
+</form>
 </body>
 </html>

@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 import store
-
+from Shop.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^shop/', include('store.urls')),
+    url(r'^index/$', index),
+
+
 ]

@@ -9,5 +9,27 @@
 <li><a href="http://127.0.0.1:8000/shop/beer{{beer.id}}">{{beer.title}}</a></li>
 {%endfor%}
 </ul>
+<ul>
+{%for page in range%}
+<li><a href="http://127.0.0.1:8000/shop/{{page}}">{{page}}</a></li>
+{%endfor%}
+</ul>
+ <form  method="get">
+   <p><b>темное или светлое?</b></p>
+    <p><input name="is_dark" type="radio" value="1"> Темное</p>
+    <p><input name="is_dark" type="radio" value="0" > Светлое</p>
+    <p><input name="is_dark" type="radio" value="2" checked > отменить</p>
+    <p><input type="submit" value="Выбрать"></p>
+  </form>
+<form method="get">
+   <p><b>фильтрованное или нет</b></p>
+    <p><input name="is_filtered" type="radio" value="1"> Фильтрованное</p>
+    <p><input name="is_filtered" type="radio" value="0"> Не фильтрованное</p>
+    <p><input name="is_filtered" type="radio" value="2" checked> отменить</p>
+    <p><input type="submit" value="Выбрать"></p>
+</form> 
+<form action="order/" method="POST">
+	<p><input name ='buy' type="submit" ></p>
+</form>
 </body>
 </html>
