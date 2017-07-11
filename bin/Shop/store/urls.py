@@ -11,5 +11,8 @@ urlpatterns = [
     url(r'^beer(\d+)/buy$', csrf_exempt(buy)),
     url(r'^order/$', order),
     url(r'^test/$', test),
-    url(r'^login/$', csrf_exempt(login_view)),
+    url(r'^login_view/$', csrf_exempt(login_view)),
+    url(r'^login/$', csrf_exempt(login)),
+    url(r'^logout/$', logout_view),
+    url(r'^backet/$', backet),
 ]

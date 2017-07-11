@@ -25,7 +25,7 @@ class Order(models.Model):
 		db_table = 'order'
 	price = models.IntegerField()
 	time = models.DateTimeField()
-	user = models.OneToOneField(User, null = True)
+	user = models.ForeignKey(User, null = True)
 
 class Gds(models.Model):
 	class Meta():
@@ -41,4 +41,4 @@ class Comment(models.Model):
 		db_table = 'comment'
 	text = models.TextField()
 	beer = models.ForeignKey(Beer)
-	#user = models.ForeignKey(User)
+	user = models.ForeignKey(User, null = True)
