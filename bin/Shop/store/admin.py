@@ -2,8 +2,18 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from store.models import Beer
+from store.models import Beer, Image, Comment
 # Register your models here.
 
 
-admin.site.register(Beer)
+class BeerImageInline(admin.StackedInline):
+	model = Image
+
+class BeerCommentInline(admin.StackedInline):
+	model = Comment
+	extra = 3
+
+class BeerAdmin(admin.ModelAdmin):
+	inlines = [BeerCommentInline, BeerImageInline]
+
+admin.site.register(Beer, BeerAdmin)

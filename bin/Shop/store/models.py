@@ -42,3 +42,10 @@ class Comment(models.Model):
 	text = models.TextField()
 	beer = models.ForeignKey(Beer)
 	user = models.ForeignKey(User, null = True)
+
+
+class Image(models.Model):
+	class Meta():
+		db_table = 'image'
+	image = models.ImageField(null = True, blank = True, upload_to = 'images/')
+	beer = models.ForeignKey(Beer, null = True)

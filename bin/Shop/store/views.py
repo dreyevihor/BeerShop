@@ -39,7 +39,7 @@ def shop(request, offset):
 	if offset == '':
 		offset = 1
 	beer_list = beer_list_full[20*int(offset)-20: 20*int(offset)]
-	a = open("/home/ihor/BeerShop/front-end/index.html")
+	a = open("../../front-end/index.html")
 	hl = Template(a.read())
 	a.close()
 	count_of_pages = math.ceil(beer_list_full.count()/20)
@@ -69,7 +69,7 @@ def beer_page(request, offset):
 	args['form'] = CommentForm
 	args['buyform'] = BuyForm
 	args['comments'] = comments
-	a = open("/home/ihor/BeerShop/front-end/beerpage.html")
+	a = open("../../front-end/beerpage.html")
 	hl = Template(a.read())
 	a.close()
 	html = hl.render(Context({'args': args}))
@@ -79,7 +79,7 @@ def registration(request):
 	if not request.user.is_authenticated():
 		check_ses(request)
 		args = {}
-		a = open("/home/ihor/BeerShop/front-end/reg.html")
+		a = open("../../front-end/reg.html")
 		ht = Template(a.read())
 		a.close()
 		args['form'] = UserCreationForm
@@ -150,7 +150,7 @@ def test(request):
 	check_ses(request)
 	#beer = Beer.objects.get(id = offset)
 	#test = request.session['backet'][0]
-	a = open("/home/ihor/BeerShop/front-end/test.html")
+	a = open("../../front-end/test.html")
 	hl = Template(a.read())
 	a.close()
 	html = hl.render(Context({'test': test}))
@@ -172,7 +172,7 @@ def login(request):
 		check_ses(request)
 		#beer = Beer.objects.get(id = offset)
 		#test = request.session['backet'][0]
-		a = open("/home/ihor/BeerShop/front-end/login.html")
+		a = open("../../front-end/login.html")
 		hl = Template(a.read())
 		a.close()
 		html = hl.render(Context())
