@@ -59,6 +59,7 @@ def beer_page(request, offset):
 	#except Beer.DoesNotExist:
 	#	raise Http404("Poll does not exist")
 	comments = Comment.objects.filter(beer = beer)
+	images = Image.objects.filter(beer = beer)
 	args = {}
 	args['title'] = beer.title
 	args['price'] = beer.price
@@ -69,6 +70,7 @@ def beer_page(request, offset):
 	args['form'] = CommentForm
 	args['buyform'] = BuyForm
 	args['comments'] = comments
+	args['images'] = images
 	a = open("../../front-end/beerpage.html")
 	hl = Template(a.read())
 	a.close()

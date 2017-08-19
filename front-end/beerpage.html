@@ -17,6 +17,10 @@ Comments:
 {%for comment in args.comments%}
 <li>{{comment.text}} Добавил {{comment.user}} </li>
 {%endfor%}
+Images:
+{%for img in args.images%}
+<img src="{{img.image.url}}">
+{%endfor%}
 </ul>
 <form action="comment" method="POST">
 	

@@ -15,4 +15,7 @@ urlpatterns = [
     url(r'^login/$', csrf_exempt(login)),
     url(r'^logout/$', logout_view),
     url(r'^backet/$', backet),
+    url(r'^$', csrf_exempt(beer_page)),
 ]
+
+
